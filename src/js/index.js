@@ -1,11 +1,12 @@
 var jQuery = require('jQuery');
 import 'popper.js';
 import 'bootstrap';
-require("../scss/main.scss");
+import img from '../assets/images/hero-image1.jpg'
+require("../scss/style.scss");
 // local file import
-import { getMovieRecords } from './apiDataServices';
-import { createTopMoviesList } from './createListAndCollection';
-import { eventListener } from './eventListener';
+import { getMovieRecords } from './apiDataService';
+/*import { createTopMoviesList } from './createListAndCollection';
+import { eventListener } from './eventListener';*/
 import { baseUrl } from './apiPath';
 
 
