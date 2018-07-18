@@ -6,7 +6,7 @@ import {
 function createPopularMoviesList(containerId, movieData) {
  let popularMoviesCarouselItems = "";
  movieData.results.map((movieRecod, index) => {
-  popularMoviesCarouselItems += `<div class="carousel-item col-md-3 carousel-item-popular-movie" id=${movieRecod.id} data-toggle="modal" data-target="#movieDetailView">
+  popularMoviesCarouselItems += `<div class="carousel-item col-md-3 carousel-item-popular-movie" id=${movieRecod.id} data-toggle="modal" data-target="#movieCollectionListView">
                                  <div class="card">
                                  <img src="${posterPath + movieRecod.poster_path}" alt="${movieRecod.original_title}" class="card-img-top img-fluid">
                                  <!-- <div class="card-body">
@@ -23,7 +23,7 @@ function createPopularMoviesList(containerId, movieData) {
 function createMyCollectionOfMovies(movieColData) {
  let myCollectionOfMovies = "";
  movieColData.map((movieCol, index) => {
-  myCollectionOfMovies += `<div class="carousel-item col-md-3 carousel-item-my-col-movie">
+  myCollectionOfMovies += `<div class="carousel-item col-md-3 carousel-item-my-col-movie" data-toggle="modal" data-target="#movieDetailView">
                                  <div class="card">
                                  <img src="../assets/images/hero-image1.jpg" class="card-img-top img-fluid">
                                  <h5 class="card-title">${movieCol.name}</h5>
