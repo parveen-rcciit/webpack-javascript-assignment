@@ -1,7 +1,48 @@
-#hero-image{
+/*#hero-image{
   background: url('../assets/images/hero-image1.jpg') center center no-repeat;
   background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;
+}*/
+
+//to display 4 cards in carousel at once
+.carousel-item.active,
+.carousel-item.active + .carousel-item,
+.carousel-item.active + .carousel-item + .carousel-item,
+.carousel-item.active + .carousel-item + .carousel-item + .carousel-item {
+  width: 20%;
+  display: block;
+  float: left;
+}
+
+.navbar-input-group {
+  font-size: 0px;
+  /*removes whitespace between button and input*/
+}
+
+.navbar-input-group input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.navbar-input-group .btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0px;
+}
+
+#popularMovies {
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.view-movie-details{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.view-search-details{
+  margin-top: 100px;
+  margin-bottom: 100px;
 }

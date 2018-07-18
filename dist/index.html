@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Cruiser</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Movie Cruiser</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Most Popular</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My List</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div id="hero-unit">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Movie Cruiser</h1>
+        <p class="lead">The best place for movie surfing</p>
+        <div id="hero-image"></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="popularMovies">
+    <h2>Most Popular Movies</h2>
+    <div class="section-content">
+      <div id="carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
+        <!-- Wrapper for slides -->
+          <div class="carousel-inner"></div>
+        <!-- Controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <!--<div class="container">
+        <div id="topMoviesContainer" class="row m-1">
+
+        </div>
+        <button id="loadMovie" type="button" class="w-25 p-1 btn btn-primary" pageNumber="1">Load More...</button>
+      </div>-->
+    </div>
+  </section>
+  <section id="myListMovies">
+    <h2>My List of Movies</h2>
+    <div class="section-content">
+      <div class="container">
+        <div class="row">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <p>uncopyright 2018.</p>
+          <p>code by parveen</p>
+        </div>
+        <div class="col-sm-4">
+          <h6>Follow me on the web</h6>
+          <!--Facebook-->
+          <button type="button" class="btn btn-fb" aria-label="facebook"><i class="fa fa-facebook"></i></button>
+          <!--Twitter-->
+          <button type="button" class="btn btn-tw" aria-label="twitter"><i class="fa fa-twitter"></i></button>
+          <!--Linkedin-->
+          <button type="button" class="btn btn-li" aria-label="linkedin"><i class="fa fa-linkedin"></i></button>
+          <!--Instagram-->
+          <button type="button" class="btn btn-ins" aria-label="instagram"><i class="fa fa-instagram"></i></button>
+          <!--Youtube-->
+          <button type="button" class="btn btn-yt" aria-label="youtube"><i class="fa fa-youtube"></i></button>
+        </div>
+        <div class="col-sm-4">
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
