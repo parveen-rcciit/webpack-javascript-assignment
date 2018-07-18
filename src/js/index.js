@@ -10,10 +10,14 @@ require("../scss/style.scss");
 // local file import
 import {
   getPopularMovies,
+  getMyListOfMoviesByCollection,
+  getMovieCollectionTypes,
   getSearchMovieResults
 } from './apiDataService';
 import {
   createPopularMoviesList,
+  createMyCollectionOfMovies,
+  createMyListOfMoviesByCollection,
   createSearchMoviesList
 } from './createListAndCollection';
 import {
@@ -35,6 +39,12 @@ function showSearchMovies(data) {
   jQuery("#searchMovieResult").addClass("view-search-details");
 }
 
+function showMyCollectionOfMovies(data){
+   createMyCollectionOfMovies(data);
+}
+function showMyListOfMoviesByCollection(data){
+  createMyListOfMoviesByCollection(data);
+}
 function showMovieDetail(movieDetails) {
 
 }
@@ -59,9 +69,10 @@ function localEventListener() {
 jQuery(document).ready(function () {
   console.log('app initialized');
   getPopularMovies(1, showPopularMovies);
+  getMovieCollectionTypes(showMyCollectionOfMovies);
   localEventListener();
   //carousel
-  jQuery('#myCarousel, #myCarousel-search').on('slid.bs.carousel', function () {
+  jQuery('#myCarousel, #myCarousel-search, #myCarousel-myColMovie').on('slid.bs.carousel', function () {
     jQuery(".carousel-item.active:nth-child(" + (jQuery(".carousel-inner .carousel-item").length - 1) + ") + .carousel-item").insertBefore(jQuery(".carousel-item:first-child"));
     jQuery(".carousel-item.active:last-child").insertBefore(jQuery(".carousel-item:first-child"));
   });

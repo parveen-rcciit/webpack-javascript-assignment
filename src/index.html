@@ -55,7 +55,7 @@
   <section id="searchMovieResult" class="d-none">
     <h2>Search Movie Results</h2>
     <div class="section-content">
-      <div class="container-fluid">
+      <div class="container">
         <div id="myCarousel-search" class="row carousel mx-auto " data-ride="carousel">
           <div class="carousel-inner carousel-inner-search-movie">
             <div class="card-deck card-deck-search-movie">
@@ -85,7 +85,7 @@
         </div>
         <div class="modal-body">
           <div class="main-pages" id="detailsPage">
-            <section id="movieDetail" class="container-fluid"></section>
+            <section id="movieDetail" class="container"></section>
           </div>
         </div>
         <div class="modal-footer">
@@ -99,7 +99,7 @@
   <section id="popularMovies">
     <h2>Most Popular Movies</h2>
     <div class="section-content">
-      <div class="container-fluid">
+      <div class="container">
         <div id="myCarousel" class="row carousel mx-auto " data-ride="carousel">
           <div class="carousel-inner carousel-inner-popular-movie">
             <div class="card-deck card-deck-popular-movie">
@@ -121,8 +121,19 @@
     <h2>My List of Movies</h2>
     <div class="section-content">
       <div class="container">
-        <div class="row">
-
+        <div id="myCarousel-myColMovie" class="row carousel mx-auto " data-ride="carousel">
+          <div class="carousel-inner carousel-inner-myCollection-movie">
+            <div class="card-deck card-deck-my-collection-movie">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel-myColMovie" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel-myColMovie" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </div>

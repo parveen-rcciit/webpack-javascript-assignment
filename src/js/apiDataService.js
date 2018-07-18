@@ -28,8 +28,16 @@ function getFullMovieDetails(movieRefId, showFullMovieDetails) {
     const url = movieDetailPath + movieRefId + apiKey;
     fetchDataFromApi(url, showFullMovieDetails);
 }
-function getCollectionTypes() {
-    fetchDataFromApi('https://api.themoviedb.org/3/genre/movie/list?api_key=e423c3150a1dbc6ec70f9322a432eb28&language=en-US', getGenreMovieList);
+
+//get movie collection types
+function getMovieCollectionTypes(callback) {
+    fetchDataFromApi(`http://localhost:3031/genres/`, callback);
+    //fetchDataFromApi('https://api.themoviedb.org/3/genre/movie/list?api_key=cea6ab96d4a919c98b0d4cad5404d30a&language=en-US', callback);
+}
+
+//get movies ny collection
+function getMyListOfMoviesByCollection(callback){
+    
 }
 // saving data to collection
 function saveDataTOJsonSever(url, passData, callback) {
@@ -44,4 +52,4 @@ function saveDataTOJsonSever(url, passData, callback) {
         console.log("Request failed: " + textStatus);
     });
 }
-export { getPopularMovies, getSearchMovieResults, getFullMovieDetails, saveDataTOJsonSever };
+export { getPopularMovies, getSearchMovieResults, getFullMovieDetails, getMovieCollectionTypes, getMyListOfMoviesByCollection, saveDataTOJsonSever };

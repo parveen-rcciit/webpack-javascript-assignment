@@ -1,16 +1,19 @@
 var jQuery = require('jQuery');
-import { getFullMovieDetails, saveDataTOJsonSever } from './apiDataService'
-import { createMovieDetail } from './createListAndCollection'
+import { getFullMovieDetails, saveDataTOJsonSever, getMovieCollectionTypes } from './apiDataService'
+import { createMovieDetail, createMovieCollection } from './createListAndCollection'
 import { baseUrl } from './apiPath'
 function eventListener() {
-    jQuery(document).on("click", ".collectionButton", function () {
-        var movieId = jQuery(this).attr("movieId");
+    jQuery(document).on("click", ".movie-col-type", function () {
+        console.log("m inside col func");
+        var movieId = jQuery(this.parentElement.previousElementSibling).attr("movieid");
+        var colType = jQuery(this).attr("id");
         getFullMovieDetails(movieId, addCollection);
 
     });
     jQuery(document).on("click", ".carousel-item-popular-movie, .carousel-item-search-movie", function () {
         var movieId = jQuery(this).attr("id");
         getFullMovieDetails(movieId, showFullMovieDetails);
+        getMovieCollectionTypes(showMovieCollectionTypes);
 
     });
 }
@@ -23,6 +26,10 @@ function showFullMovieDetails(data) {
     
 }
 
+function showMovieCollectionTypes(data){
+    createMovieCollection("movieDetail", data);
+}
+
 function addCollection(data) {
     var saveData = {
         id: data.id,
@@ -33,7 +40,7 @@ function addCollection(data) {
         title: data.title,
         vote_average: data.vote_average
     };
-    saveDataTOJsonSever(baseUrl + "Animation", saveData, updateCollectionList)
+    saveDataTOJsonSever(baseUrl + "action", saveData, updateCollectionList)
 }
 function updateCollectionList(msg) {
     console.log(msg);

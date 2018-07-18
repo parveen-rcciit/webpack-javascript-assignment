@@ -1,10 +1,73 @@
-//db.json
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "genres": [
+    {
+      "id": "action",
+      "name": "Action"
+    },
+    {
+      "id": "adventure",
+      "name": "Adventure"
+    },
+    {
+      "id": "animation",
+      "name": "Animation"
+    },
+    {
+      "id": "comedy",
+      "name": "Comedy"
+    },
+    {
+      "id": "documentary",
+      "name": "Documentary"
+    },
+    {
+      "id": "horror",
+      "name": "Horror"
+    },
+    {
+      "id": "mystery",
+      "name": "Mystery"
+    },
+    {
+      "id": "romance",
+      "name": "Romance"
+    },
+    {
+      "id": "sciFi",
+      "name": "Science Fiction"
+    },
+    {
+      "id": "thriller",
+      "name": "Thriller"
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "action": [
+    {
+      "id": "260513",
+      "original_language": "en",
+      "overview": "Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet – taking care of the problems of his three children.",
+      "poster_path": "/x1txcDXkcM65gl7w20PwYSxAYah.jpg",
+      "release_date": "2018-06-14",
+      "title": "Incredibles 2",
+      "vote_average": "7.7"
+    },
+    {
+      "id": "447200",
+      "original_language": "en",
+      "overview": "Framed and on the run, a former FBI agent must save his family from a blazing fire in the world's tallest building.",
+      "poster_path": "/3NL1FiTEhU4SWOuWk8lkVCbmnYm.jpg",
+      "release_date": "2018-07-11",
+      "title": "Skyscraper",
+      "vote_average": "6"
+    },
+    {
+      "id": "284053",
+      "original_language": "en",
+      "overview": "Thor is on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela.",
+      "poster_path": "/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+      "release_date": "2017-10-25",
+      "title": "Thor: Ragnarok",
+      "vote_average": "7.5"
+    }
+  ]
 }
