@@ -2,6 +2,7 @@ var jQuery = require('jQuery');
 import 'popper.js';
 import 'bootstrap';
 import 'jquery-ui';
+//import 'font-awesome';
 import img from '../assets/images/hero-image1.jpg'
 require("../scss/style.scss");
 // local file import
@@ -35,8 +36,8 @@ function showSearchMovies(data) {
   jQuery("#searchMovieResult").addClass("view-search-details");
 }
 
-function showMyCollectionOfMovies(data){
-   createMyCollectionOfMovies(data);
+function showMyCollectionOfMovies(data) {
+  createMyCollectionOfMovies(data);
 }
 
 function saveDataToCollection(collectionname) {
@@ -46,22 +47,26 @@ function saveDataToCollection(collectionname) {
 function localEventListener() {
   eventListener();
   jQuery(document).on("click", "#nextMovieList", function () {
-    //this.previousElementSibling.previousElementSibling.firstElementChild.lastElementChild
-    var pageNumber = parseInt(jQuery(this).attr("pageNumber"));
-    pageNumber = pageNumber + 1;
-    getPopularMovies(pageNumber, showPopularMovies);
-    jQuery(this).attr("pageNumber", pageNumber);
+    var activeElemIndex = jQuery(".carousel-item-popular-movie").index(jQuery(".carousel-item-popular-movie.active"));
+    if (activeElemIndex % 13 == 0) {
+      var pageNumber = parseInt(jQuery(this).attr("pageNumber"));
+      pageNumber = pageNumber + 1;
+      getPopularMovies(pageNumber, showPopularMovies);
+      jQuery(this).attr("pageNumber", pageNumber);
+    }
   });
-  
+
   jQuery(document).on("click", "#nextSearchMovieList", function () {
-    //this.previousElementSibling.previousElementSibling.firstElementChild.lastElementChild
-    var pageNumber = parseInt(jQuery(this).attr("pageNumber"));
-    pageNumber = pageNumber + 1;
-    var movieName = jQuery('#movieName').val();
-    getSearchMovieResults(movieName, pageNumber, showSearchMovies);
-    jQuery(this).attr("pageNumber", pageNumber);
+    var activeElemIndex = jQuery(".carousel-item-search-movie").index(jQuery(".carousel-item-search-movie.active"));
+    if (activeElemIndex % 13 == 0) {
+      var pageNumber = parseInt(jQuery(this).attr("pageNumber"));
+      pageNumber = pageNumber + 1;
+      var movieName = jQuery('#movieName').val();
+      getSearchMovieResults(movieName, pageNumber, showSearchMovies);
+      jQuery(this).attr("pageNumber", pageNumber);
+    }
   });
-  
+
 }
 jQuery(document).ready(function () {
   console.log('app initialized');
@@ -76,8 +81,7 @@ jQuery(document).ready(function () {
 
   jQuery(document).on("click", "#searchMovieButton", function () {
     var movieName = jQuery('#movieName').val();
-    getSearchMovieResults(movieName, 1,  showSearchMovies);
+    getSearchMovieResults(movieName, 1, showSearchMovies);
     return false;
   });
 });
-

@@ -37,7 +37,7 @@
 #popularMovies {
   padding: 20px;
   margin: 20px;
-  background-color: #E0E0E0;
+  background-color: #E8E8E8;
 }
 
 .view-movie-details {
@@ -48,13 +48,13 @@
 .view-search-details {
   padding: 20px;
   margin: 20px;
-  background-color: #E0E0E0;
+  background-color: #E8E8E8;
 }
 
 #myListMovies {
   padding: 20px;
     margin: 20px;
-    background-color: #E0E0E0;
+    background-color: #E8E8E8;
 }
 .fixed-top {
   position: sticky;
@@ -62,7 +62,10 @@
 .carousel-control-prev, .carousel-control-next {
   width: 5%;
 }
-
+.card-tilte-list{
+  background-color: #E8E8E8;
+  margin-bottom: 0 !important;
+}
 /*.carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 100px;
