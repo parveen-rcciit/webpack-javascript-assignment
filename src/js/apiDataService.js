@@ -14,13 +14,13 @@ function fetchDataFromApi(url, callback) {
 }
 
 //get popular movies
-function getPopularMovies(pagN0, callback) {
-    fetchDataFromApi(`https://api.themoviedb.org/3/discover/movie${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pagN0}`, callback);
+function getPopularMovies(pageNumber, callback) {
+    fetchDataFromApi(`https://api.themoviedb.org/3/discover/movie${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}`, callback);
 }
 
 // get search movies
-function getSearchMovieResults(movieName, callback) {
-    fetchDataFromApi(`https://api.themoviedb.org/3/search/movie?api_key=cea6ab96d4a919c98b0d4cad5404d30a&language=en-US&query=${movieName}&page=1&include_adult=false`, callback);
+function getSearchMovieResults(movieName, pageNumber, callback) {
+    fetchDataFromApi(`https://api.themoviedb.org/3/search/movie?api_key=cea6ab96d4a919c98b0d4cad5404d30a&language=en-US&query=${movieName}&page=${pageNumber}&include_adult=false`, callback);
 }
 
 // get full Movie details
@@ -31,13 +31,13 @@ function getFullMovieDetails(movieRefId, showFullMovieDetails) {
 
 //get movie collection types
 function getMovieCollectionTypes(callback) {
-    fetchDataFromApi(`http://localhost:3031/genres/`, callback);
+    fetchDataFromApi(`http://localhost:3031/genres`, callback);
     //fetchDataFromApi('https://api.themoviedb.org/3/genre/movie/list?api_key=cea6ab96d4a919c98b0d4cad5404d30a&language=en-US', callback);
 }
 
-//get movies ny collection
-function getMyListOfMoviesByCollection(callback){
-    
+//get movies by collection
+function getMyListOfMoviesByCollection(colType, callback){
+    fetchDataFromApi(`http://localhost:3031/${colType}`, callback);
 }
 // saving data to collection
 function saveDataTOJsonSever(url, passData, callback) {

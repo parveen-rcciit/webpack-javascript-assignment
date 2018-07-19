@@ -10,7 +10,9 @@
 .carousel-item.active,
 .carousel-item.active + .carousel-item,
 .carousel-item.active + .carousel-item + .carousel-item,
-.carousel-item.active + .carousel-item + .carousel-item + .carousel-item {
+.carousel-item.active + .carousel-item + .carousel-item + .carousel-item,
+.carousel-item.active + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
+.carousel-item.active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
   width: 20%;
   display: block;
   float: left;
@@ -34,15 +36,52 @@
 
 #popularMovies {
   padding: 20px;
-  margin-top: 40px;
+  margin: 20px;
+  background-color: #E0E0E0;
 }
 
-.view-movie-details{
-  margin-top: 100px;
-  margin-bottom: 100px;
+.view-movie-details {
+  margin: 10px;
+  margin-bottom: 10px;
 }
 
-.view-search-details{
-  margin-top: 100px;
-  margin-bottom: 100px;
+.view-search-details {
+  padding: 20px;
+  margin: 20px;
+  background-color: #E0E0E0;
 }
+
+#myListMovies {
+  padding: 20px;
+    margin: 20px;
+    background-color: #E0E0E0;
+}
+.fixed-top {
+  position: sticky;
+}
+.carousel-control-prev, .carousel-control-next {
+  width: 5%;
+}
+
+/*.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 40px;
+  color: white;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 40px;
+  color: white;
+}*/

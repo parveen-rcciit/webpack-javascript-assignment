@@ -3,10 +3,12 @@ import {
  posterPath
 } from './apiPath';
 
+//displays popuar movies on home page
 function createPopularMoviesList(containerId, movieData) {
+ var movieListSize = jQuery(".carousel-item-popular-movie", ".card-deck-popular-movie").length;
  let popularMoviesCarouselItems = "";
  movieData.results.map((movieRecod, index) => {
-  popularMoviesCarouselItems += `<div class="carousel-item col-md-3 carousel-item-popular-movie" id=${movieRecod.id} data-toggle="modal" data-target="#movieCollectionListView">
+  popularMoviesCarouselItems += `<div class="carousel-item col-md-2 carousel-item-popular-movie" id=${movieRecod.id} data-toggle="modal" data-target="#movieDetailView">
                                  <div class="card">
                                  <img src="${posterPath + movieRecod.poster_path}" alt="${movieRecod.original_title}" class="card-img-top img-fluid">
                                  <!-- <div class="card-body">
@@ -15,31 +17,18 @@ function createPopularMoviesList(containerId, movieData) {
                                  </div>
                                  </div>`;
  });
- jQuery(".card-deck-popular-movie").html("");
  jQuery(".card-deck-popular-movie").append(popularMoviesCarouselItems);
- jQuery('.carousel-item-popular-movie').first().addClass('active');
+ if (movieListSize == 0) {
+  jQuery('.carousel-item-popular-movie').first().addClass('active');
+ }
 }
 
-function createMyCollectionOfMovies(movieColData) {
- let myCollectionOfMovies = "";
- movieColData.map((movieCol, index) => {
-  myCollectionOfMovies += `<div class="carousel-item col-md-3 carousel-item-my-col-movie" data-toggle="modal" data-target="#movieDetailView">
-                                 <div class="card">
-                                 <img src="../assets/images/hero-image1.jpg" class="card-img-top img-fluid">
-                                 <h5 class="card-title">${movieCol.name}</h5>
-                                 </div>
-                                 </div>`;
- });
- jQuery(".card-deck-my-collection-movie").html("");
- jQuery(".card-deck-my-collection-movie").append(myCollectionOfMovies);
- jQuery(".carousel-item-my-col-movie").first().addClass('active');
-}
-
-
+//displays search movie results on home page
 function createSearchMoviesList(containerId, movieData) {
+ var searchMovieListSize = jQuery(".carousel-item-search-movie", ".card-deck-search-movie").length;
  let searchMoviesCarouselItems = "";
  movieData.results.map((movieRecod, index) => {
-  searchMoviesCarouselItems += `<div class="carousel-item col-md-3 carousel-item-search-movie" id=${movieRecod.id} data-toggle="modal" data-target="#movieDetailView">
+  searchMoviesCarouselItems += `<div class="carousel-item col-md-2 carousel-item-search-movie" id=${movieRecod.id} data-toggle="modal" data-target="#movieDetailView">
                                  <div class="card">
                                  <img src="${posterPath + movieRecod.poster_path}" alt="${movieRecod.original_title}" class="card-img-top img-fluid">
                                  <!-- <div class="card-body">
@@ -48,12 +37,13 @@ function createSearchMoviesList(containerId, movieData) {
                                  </div>
                                  </div>`;
  });
- jQuery(".card-deck-search-movie").html("");
  jQuery(".card-deck-search-movie").append(searchMoviesCarouselItems);
- jQuery('.carousel-item-search-movie').first().addClass('active');
+ if (searchMovieListSize == 0) {
+  jQuery('.carousel-item-search-movie').first().addClass('active');
+ }
 
 }
-
+//displays movie details
 function createMovieDetail(containerId, movieDetailData) {
 
  let movieDetails = `<div class="section-content">
@@ -77,12 +67,11 @@ function createMovieDetail(containerId, movieDetailData) {
                               </div>
                           </div>
                       </div>`;
- jQuery("#" + containerId).html("");
  jQuery("#" + containerId).html(movieDetails);
 
 }
-
-function createMovieCollection(containerId, movieCollectionTypesData) {
+//displays all collection buttons
+function createMovieCollectionButton(containerId, movieCollectionTypesData) {
 
  let movieCollectionTypes = "";
 
@@ -96,15 +85,64 @@ function createMovieCollection(containerId, movieCollectionTypesData) {
  jQuery(".movie-full-details").append(movieCollectionTypes);
 }
 
-function createMyListOfMoviesByCollection() {
 
+//displays collection list on home page
+function createMyCollectionOfMovies(movieColData) {
+ let myCollectionOfMovies = "";
+ movieColData.map((movieCol, index) => {
+  myCollectionOfMovies += `<div id=${movieCol.id} class="carousel-item col-md-2 carousel-item-my-collection-movie" data-toggle="modal" data-target="#movieCollectionListView">
+                                 <div class="card">
+                                 <img src="../assets/images/my-col.jpg" class="card-img-top img-fluid">
+                                 <h5 class="card-title">${movieCol.name}</h5>
+                                 </div>
+                                 </div>`;
+ });
+ jQuery(".card-deck-my-collection-movie").append(myCollectionOfMovies);
+ jQuery(".carousel-item-my-collection-movie").first().addClass('active');
 }
+
+//displays all movies in a collection
+function createMoviesByCollection(movieCollectionData) {
+ let movieCollectionDetails = "";
+ jQuery("#movieCollectionList").html("");
+ movieCollectionData.map((movieColDetailData, index) => {
+  movieCollectionDetails += `<div class="section-content">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col-md-4 pt-1">
+                                      <div class="movie-image movie-image-col" movieId="${movieColDetailData.id}">
+                                          <img src="${posterPath + movieColDetailData.poster_path}" alt="${movieColDetailData.title}" class="img-thumbnail rounded">
+                                      </div>
+                                  </div>
+                                     <div class="col-md-8 pt-1">
+                                      <div class="movie-full-details">
+                                          <h3>${movieColDetailData.title}</h3>
+                                          <div class="" movie-details-overview>
+                                              <h5>Overview</h5>
+                                              <p>${movieColDetailData.overview}</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>`;
+ });
+
+ jQuery("#movieCollectionList").append(movieCollectionDetails);
+}
+
+
+jQuery("document").on("error", ".movie-image-col", function () {
+ var imgSrc = this.src.replace(/ /g, "/");
+ jQuery(this).attr("src", imgSrc);
+ return true;
+});
 
 export {
  createPopularMoviesList,
  createMyCollectionOfMovies,
- createMyListOfMoviesByCollection,
+ createMoviesByCollection,
  createSearchMoviesList,
  createMovieDetail,
- createMovieCollection
+ createMovieCollectionButton
 };
