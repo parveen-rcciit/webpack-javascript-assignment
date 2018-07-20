@@ -57,6 +57,8 @@ function eventListener() {
             addToCollection(buttonId, buttonText);
         }
     });
+    
+    
 }
 
 function showFullMovieDetails(data) {

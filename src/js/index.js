@@ -84,4 +84,5 @@ jQuery(document).ready(function () {
     getSearchMovieResults(movieName, 1, showSearchMovies);
     return false;
   });
+
 });
