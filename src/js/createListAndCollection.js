@@ -109,18 +109,18 @@ function createMoviesByCollection(movieCollectionData) {
   movieCollectionDetails += `<div class="section-content">
                           <div class="container">
                               <div class="row">
-                                  <div class="col-md-4 pt-1">
-                                      <div class="movie-image movie-image-col" movieId="${movieColDetailData.id}">
+                                  <div class="col-md-3 pt-1">
+                                      <div class="movie-image-col w-75" movieId="${movieColDetailData.id}">
                                           <img src="${posterPath + movieColDetailData.poster_path}" alt="${movieColDetailData.title}" class="img-thumbnail rounded">
                                       </div>
                                   </div>
-                                     <div class="col-md-8 pt-1">
+                                     <div class="col-md-9 pt-1">
                                       <div class="movie-full-details">
                                           <h3>${movieColDetailData.title}</h3>
                                           <div class="" movie-details-overview>
                                               <h5>Overview</h5>
                                               <p>${movieColDetailData.overview}</p>
-                                          </div>
+                                         </div>
                                       </div>
                                   </div>
                               </div>
