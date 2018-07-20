@@ -92,7 +92,7 @@ function createMyCollectionOfMovies(movieColData) {
  movieColData.map((movieCol, index) => {
   myCollectionOfMovies += `<div id=${movieCol.id} class="carousel-item col-md-2 carousel-item-my-collection-movie" data-toggle="modal" data-target="#movieCollectionListView">
                                  <div class="card">
-                                 <img src="../assets/images/my-col.jpg" class="card-img-top img-fluid">
+                                 <img src="../assets/images/my-col.jpg" class="card-img-top img-fluid" alt="Collection Image">
                                  <h6 class="card-title card-tilte-list">${movieCol.name}</h6>
                                  </div>
                                  </div>`;

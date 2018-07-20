@@ -35,6 +35,10 @@
     {
       "id": "history",
       "name": "History"
+    },
+    {
+      "id": "hindi",
+      "name": "Hindi"
     }
   ],
   "action": [
@@ -160,7 +164,17 @@
   ],
   "family": [],
   "fantasy": [],
-  "history": [],
+  "history": [
+    {
+      "id": "8618",
+      "original_language": "en",
+      "overview": "The story of an unruly class of bright, funny history students at a Yorkshire grammar school in pursuit of an undergraduate place at Oxford or Cambridge. Bounced between their maverick English master, a young and shrewd teacher hired to up their test scores, a grossly out-numbered history teacher, and a headmaster obsessed with results, the boys attempt to pass.",
+      "poster_path": "/6RhhJSyWKe34MK8MxW2h2CJ2ecm.jpg",
+      "release_date": "2006-10-02",
+      "title": "The History Boys",
+      "vote_average": "6.7"
+    }
+  ],
   "horror": [
     {
       "id": "351286",
@@ -180,5 +194,15 @@
   "thriller": [],
   "war": [],
   "western": [],
-  "hindi": []
+  "hindi": [
+    {
+      "id": "299536",
+      "original_language": "en",
+      "overview": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
+      "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "release_date": "2018-04-25",
+      "title": "Avengers: Infinity War",
+      "vote_average": "8.4"
+    }
+  ]
 }
