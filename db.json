@@ -184,7 +184,17 @@
       "vote_average": "7.7"
     }
   ],
-  "family": [],
+  "family": [
+    {
+      "id": "260513",
+      "original_language": "en",
+      "overview": "Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet – taking care of the problems of his three children.",
+      "poster_path": "/x1txcDXkcM65gl7w20PwYSxAYah.jpg",
+      "release_date": "2018-06-14",
+      "title": "Incredibles 2",
+      "vote_average": "7.7"
+    }
+  ],
   "fantasy": [],
   "history": [
     {
